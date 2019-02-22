@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Author: Mariel Lanza -->
+    <!-- Date: 02/21/2020 -->
+    <!-- Comments: This HTML demonstrates a responsive form layout with the purpose to collect data from the user.  -->
+    <meta charset="UTF-8">
+    <title>Customer Information</title>
+    <link rel="stylesheet" href="Project4-style.css" />
+    <script>
+    // Form validation code will come here.
+    function validateForm() {
+        var fname = document.forms["customerInfo"]["fname"].value; 
+        var lname= document.forms["customerInfo"]["lname"].value;
+        var email= document.forms["customerInfo"]["email"].value;
+    // Before submitting the form, alert the user which fields are missing.
+        if (fname == "") {
+            alert("Please enter your first name.");
+            return false;
+        }
+        if (lname=="") {
+            alert("Please enter your last name.");
+            return false;
+        }
+        if (email=="") {
+            alert("Please enter an email address.");
+            return false;
+        } 
+    }
+    </script>
+</head>
+<body>
+    <!-- Customer Information form beggins here -->
+    <h1>CUSTOMER INFORMATION FORM</h1>
+    <div class="container">
+        <p>Fill out this form for a chance to win.</p>
+        <form name="customerInfo" action="act_page.php" onsubmit="return validateForm()"
+           method="post">
+            <!-- Customer first name label and text box will be placed here -->
+            <div class="row">
+                <div class="col-25">
+                    <label for="firstn">First Name:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="firstname">
+                </div>
+            </div>
+            <!-- Customer last name label and text box will be placed here -->
+            <div class="row">
+                <div class="col-25">
+                    <label for="lastn">Last Name:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="lastname">
+                </div>
+            </div>
+            <!-- Customer email label and text box will be placed here -->
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="email" name="email">
+                </div>
+            </div>
+            <!-- Submit button will be placed here -->
+            <div class="row">
+                <input type="submit" id="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
